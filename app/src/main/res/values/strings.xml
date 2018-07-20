@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestDataBinding</string>
+
+    <string name="welcom">欢迎：%1$s</string>
+</resources>

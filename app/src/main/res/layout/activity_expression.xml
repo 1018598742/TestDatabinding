@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="image"
+            type="com.fta.testdatabinding.moudle.NameMoudle" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:visibility="@{image.mIsFired ? View.INVISIBLE : View.VISIBLE}"
+            app:imageUrl="@{image.avatar}"
+            app:placeholder="@{@drawable/scan_icon}" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{image.firstName}"
+            android:visibility="@{avatar.visibility}" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{image.lastName}" />
+
+        <CheckBox
+            android:id="@+id/seeAds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:visibility="@{seeAds.checked ? View.VISIBLE : View.GONE}" />
+    </LinearLayout>
+
+</layout>
